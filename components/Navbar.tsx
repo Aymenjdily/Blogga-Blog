@@ -14,7 +14,7 @@ const Navbar = () => {
     const { providers } = useProviders()
 
     return (
-        <header className="text-gray-600 body-font bg-[#27374D] w-full">
+        <header className="text-gray-600 body-font absolute w-full">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center relative">
                 <Link
                     href="/"
@@ -23,10 +23,10 @@ const Navbar = () => {
                     blogga
                 </Link>
                 <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                    <Link href="" className="md:mr-10 mr-5 text-white hover:text-gray-300 text-sm font-semibold">Dev Tools</Link>
-                    <Link href="" className="md:mr-10 mr-5 text-white hover:text-gray-300 text-sm font-semibold">Daily Updates</Link>
-                    <Link href="" className="md:mr-10 mr-5 text-white hover:text-gray-300 text-sm font-semibold">Tutorials</Link>
-                    <Link href="" className="md:mr-10 mr-0 text-white hover:text-gray-300 text-sm font-semibold">Library</Link>
+                    <Link href="/devTools" className="md:mr-10 mr-5 text-white hover:text-gray-300 text-sm font-semibold">Dev Tools</Link>
+                    <Link href="/dailyUpdates" className="md:mr-10 mr-5 text-white hover:text-gray-300 text-sm font-semibold">Daily Updates</Link>
+                    <Link href="/Tutorials" className="md:mr-10 mr-5 text-white hover:text-gray-300 text-sm font-semibold">Tutorials</Link>
+                    <Link href="/Library" className="md:mr-10 mr-0 text-white hover:text-gray-300 text-sm font-semibold">Library</Link>
                 </nav>
                 {
                     session?.user ? (

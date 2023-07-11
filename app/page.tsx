@@ -6,6 +6,8 @@ export default function Home() {
     <>
       <Intro
         category="👋 Hello"
+        bgColor='bg-[#27374D]'
+        categoryClasses=''
       />
       <section>
         
