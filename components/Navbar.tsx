@@ -84,10 +84,19 @@ const Navbar = () => {
                                         <Menu.Item>
                                             <Link 
                                                 className=""
-                                                href="/create"
+                                                href="/create-post"
                                                 onClick={() => setToggle(false)}
                                             >
                                                 Create your Post
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link 
+                                                className=""
+                                                href="/share-book"
+                                                onClick={() => setToggle(false)}
+                                            >
+                                                Share a Book
                                             </Link>
                                         </Menu.Item>
                                         <Menu.Item>
