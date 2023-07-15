@@ -1,14 +1,14 @@
 import { Form, Intro } from '@/components'
+import Modal from '@/components/Modal'
 import React from 'react'
 
 const page = () => {
   return (
-    <>
-      <div className='bg-[#27374D] h-40' />
+    <Modal>
       <Form
-        type="Create"
+        type="create"
       />
-    </>
+    </Modal>
   )
 }
 

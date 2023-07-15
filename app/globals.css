@@ -95,3 +95,52 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.modal {
+  @apply fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto bg-black/80;
+}
+
+.modal_wrapper {
+  @apply flex justify-start items-center flex-col absolute h-[95%] w-full bottom-0 bg-white rounded-t-3xl lg:px-40 px-8 pt-14 pb-72 overflow-auto;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+.form_image-container {
+  @apply w-full lg:min-h-[400px] min-h-[200px] relative;
+}
+
+.flexCenter {
+  @apply flex justify-center items-center;
+}
+
+.form_image-label {
+  @apply z-10 text-center w-full h-full p-20 text-gray-100 border-2 border-gray-50 border-dashed;
+}
+
+.form_image-input {
+  @apply absolute z-30 w-full opacity-0 h-full cursor-pointer;
+}
+
+.form {
+  @apply flex-col w-full lg:pt-24 pt-12 gap-10 text-lg max-w-5xl mx-auto;
+}
+
+.form_field-input {
+  @apply w-full outline-0 bg-gray-200 rounded-xl p-4;
+}
+
+/* Custom Menu */
+.custom_menu-btn {
+  @apply gap-4 w-full rounded-md bg-gray-200 p-4 text-base outline-none capitalize;
+}
+
+.custom_menu-items {
+  @apply flex-col absolute left-0 mt-2 sm:min-w-[300px] w-fit max-h-64 origin-top-right rounded-xl bg-white border border-gray-400 shadow-xl overflow-y-auto;
+}
+
+.custom_menu-item {
+  @apply text-left w-full px-5 py-2 text-sm hover:bg-gray-200 self-start whitespace-nowrap capitalize;
+}
