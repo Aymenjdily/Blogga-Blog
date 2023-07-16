@@ -9,10 +9,14 @@ import Provider from "./Providers";
 import Form from "./Form";
 import CustomInput from "./CustomInput";
 
+{/* Used Components */}
+import DailyUpdates from "./DailyUpdates";
+
 export {
     Navbar,
     Intro,
     Provider,
     Form,
-    CustomInput
+    CustomInput,
+    DailyUpdates
 }

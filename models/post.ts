@@ -9,6 +9,10 @@ const PostSchema = new Schema({
     type: String,
     required: [true, 'Post Title is required.'],
   },
+  image: {
+    type: String,
+    required: [true, 'Post Image is Required.'],
+  },
   category: {
     type: String,
     required: [true, 'Category is required.'],
@@ -23,11 +27,11 @@ const PostSchema = new Schema({
   },
   secondParagraph: {
     type: String,
-    required: [false],
+    required: [true, 'Paragraph is required'],
   },
   quote: {
     type: String,
-    required: [false],
+    required: [true, 'Quote is required'],
   },
 }, {
     timestamps: true

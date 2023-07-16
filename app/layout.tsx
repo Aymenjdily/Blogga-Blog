@@ -2,6 +2,7 @@ import { Navbar, Provider } from '@/components'
 import './globals.css'
 import type { Metadata } from 'next'
 import { ProviderContextProvider } from '@/context/providerContext'
+import { PostContextProvider } from '@/context/postContext'
 
 export const metadata: Metadata = {
   title: 'Blogga',
@@ -18,10 +19,12 @@ export default function RootLayout({
       <body>
         <Provider>
           <ProviderContextProvider>
-            <Navbar />
-            <main>
-              {children}
-            </main>
+            <PostContextProvider>
+              <Navbar />
+              <main>
+                {children}
+              </main>
+            </PostContextProvider>
           </ProviderContextProvider>
         </Provider>
       </body>

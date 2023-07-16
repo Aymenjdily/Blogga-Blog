@@ -6,23 +6,20 @@ import Image from 'next/image'
 import CustomInput from './CustomInput'
 import CustomMenu from './CustomMenu'
 import { postCategories } from '@/constants'
+import CustomButton from './CustomButton'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
-const Form = ({ type, post, setPost, submitting, handleSubmit} : any) => {
+const Form = ({ type, formBlog, setForm } : any) => {
   const [imageSrc, setImageSrc] = useState('');
   const [uploadData, setUploadData] = useState();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter()
 
-  const [formBlog, setForm] = useState({
-    title: '',
-    description: '',
-    firstParagraph: '',
-    image: '',
-    secondParagraph: '',
-    quote: '',
-    category: ''
-})
+  // Get User Data
+  const {data:session} = useSession()
 
- console.log(imageSrc)
-
+  // Change Image State
   // @ts-ignore
   function handleOnChange(changeEvent) {
     const reader = new FileReader();
@@ -36,6 +33,12 @@ const Form = ({ type, post, setPost, submitting, handleSubmit} : any) => {
     reader.readAsDataURL(changeEvent.target.files[0]);
   }
 
+  // Change Input Value
+  const handleStateChange = (fieldName: string, value:string) => {
+    setForm((prev: any) => ({ ...prev, [fieldName]: value}))
+  }
+
+  // Submit Data
   // @ts-ignore
   async function handleOnSubmit(event) {
     event.preventDefault();
@@ -58,18 +61,38 @@ const Form = ({ type, post, setPost, submitting, handleSubmit} : any) => {
     }).then(r => r.json());
 
     setImageSrc(data.secure_url);
-    setUploadData(data);
     handleStateChange('image', imageSrc)
+    setUploadData(data);
+    setIsSubmitting(false)
 
-    if(imageSrc!= ''){
-      console.log(formBlog)
+    if(formBlog.image != ''){
+      try {
+        const response = await fetch("/api/post/new", {
+          method: "POST",
+          body: JSON.stringify({
+            // @ts-ignore
+            userId: session?.user.id ,
+            title: formBlog.title,
+            image: formBlog.image,
+            category: formBlog.category,
+            description: formBlog.description,
+            firstParagraph: formBlog.firstParagraph,
+            secondParagraph: formBlog.secondParagraph,
+            quote: formBlog.quote
+          }),
+        });
+    
+        if (response.ok) {
+          router.push("/");
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsSubmitting(false)
+      }
     }
-
   }
 
-  const handleStateChange = (fieldName: string, value:string) => {
-    setForm((prev) => ({ ...prev, [fieldName]: value}))
-  }
 
   return (
     <section className="w-full container mx-auto md:px-0 px-4 justify-center max-w-full flex-center flex-col">
@@ -145,11 +168,11 @@ const Form = ({ type, post, setPost, submitting, handleSubmit} : any) => {
           setState={(value) => handleStateChange('quote', value)}
         />
 
-        <button
+        <CustomButton
           type='submit'
-        >
-          Post
-        </button>
+          title="create"
+          submitting={isSubmitting}
+        />
       </form>
     </section>
   )

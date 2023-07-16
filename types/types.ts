@@ -18,7 +18,14 @@ export type FormFieldProps = {
 
 export type CustomFieldProps = {
     title: string;
-     state: string;
-     filters: Array<string>;
-     setState: (value: string) => void
-   }    
+    state: string;
+    filters: Array<string>;
+    setState: (value: string) => void
+}    
+
+export type CustomButtonProps = {
+    title: string;
+    type?: 'button' | 'submit';
+    submitting: boolean;
+}
+
