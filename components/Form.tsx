@@ -63,9 +63,9 @@ const Form = ({ type, formBlog, setForm } : any) => {
     setImageSrc(data.secure_url);
     handleStateChange('image', imageSrc)
     setUploadData(data);
-    setIsSubmitting(false)
-
+    
     if(formBlog.image != ''){
+      setIsSubmitting(true)
       try {
         const response = await fetch("/api/post/new", {
           method: "POST",
@@ -109,7 +109,7 @@ const Form = ({ type, formBlog, setForm } : any) => {
         onSubmit={handleOnSubmit}
         className="flexStart form border-t"  
       >
-        <div>
+        <div className='w-full'>
           <label className="block mb-2 text-sm font-semibold text-gray-900">Upload Image</label>
           <p>
             <input type="file" name="file" className='block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 
@@ -118,8 +118,11 @@ const Form = ({ type, formBlog, setForm } : any) => {
             file:py-3 file:px-4'
             onChange={handleOnChange} />
           </p>
+
+          <div className='relative w-full h-64'>
+            <Image alt="image" fill src={imageSrc || "/upload.png"} className='my-5 object-contain' />
+          </div>
             
-          <Image alt="image" width={400} height={400} src={imageSrc || "/upload.png"} className='my-5' />
             
             {imageSrc && !uploadData && (
               <p>

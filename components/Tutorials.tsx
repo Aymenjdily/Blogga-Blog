@@ -4,10 +4,10 @@ import { usePost } from '@/hooks/usePost'
 import React from 'react'
 import PostCard from './PostCard'
 
-const DailyUpdates = () => {
+const Tutorials = () => {
     const { posts } = usePost()
 
-    const filteredPosts = posts && posts.filter((post:any) => post.category=="Daily Updates")
+    const filteredPosts = posts && posts.filter((post:any) => post.category=="Tutorials")
     
     console.log(filteredPosts)
     return (
@@ -15,7 +15,7 @@ const DailyUpdates = () => {
             <h1
                 className='font-extrabold text-4xl text-[#27374D]'
             >
-                Weekly Updates
+                Tutorials
             </h1>
 
             <div className='flex flex-col space-y-[80px] my-10'>
@@ -30,4 +30,4 @@ const DailyUpdates = () => {
     )
 }
 
-export default DailyUpdates
+export default Tutorials

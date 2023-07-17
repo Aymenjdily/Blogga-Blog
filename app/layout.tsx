@@ -1,4 +1,4 @@
-import { Navbar, Provider } from '@/components'
+import { Footer, Navbar, Provider } from '@/components'
 import './globals.css'
 import type { Metadata } from 'next'
 import { ProviderContextProvider } from '@/context/providerContext'
@@ -24,6 +24,7 @@ export default function RootLayout({
               <main>
                 {children}
               </main>
+              <Footer />
             </PostContextProvider>
           </ProviderContextProvider>
         </Provider>

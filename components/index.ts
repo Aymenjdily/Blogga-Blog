@@ -1,6 +1,7 @@
 {/* Layout Components */}
 import Navbar from "./Navbar";
 import Intro from "./Intro";
+import Footer from "./Footer";
 
 {/* Auth Provider */}
 import Provider from "./Providers";
@@ -11,12 +12,17 @@ import CustomInput from "./CustomInput";
 
 {/* Used Components */}
 import DailyUpdates from "./DailyUpdates";
+import DevTools from "./DevTools";
+import Tutorials from "./Tutorials";
 
 export {
     Navbar,
     Intro,
     Provider,
     Form,
+    Footer,
     CustomInput,
-    DailyUpdates
+    DailyUpdates,
+    DevTools,
+    Tutorials
 }

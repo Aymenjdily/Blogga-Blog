@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <header className="text-gray-600 body-font absolute w-full">
-            <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center relative">
+            <div className="px-10 flex flex-wrap p-5 flex-col md:flex-row items-center relative">
                 <Link
                     href="/"
                     className='font-extrabold md:mb-0 mb-3 text-2xl uppercase text-white'

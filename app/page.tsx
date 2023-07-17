@@ -1,4 +1,4 @@
-import { DailyUpdates, Intro } from '@/components'
+import { DailyUpdates, DevTools, Intro, Tutorials } from '@/components'
 import Image from 'next/image'
 
 export default function Home() {
@@ -10,7 +10,9 @@ export default function Home() {
         categoryClasses=''
       />
       <section>
+        <DevTools />
         <DailyUpdates />
+        <Tutorials />
       </section>
     </>
   )

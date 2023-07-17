@@ -8,7 +8,7 @@ const Intro = (
     <section
         className={`py-24 md:h-[70vh] h-[80vh] flex items-center justify-start ${bgColor}`}
     >
-        <div className='px-20 container mx-auto mt-20'>
+        <div className='md:px-0 px-8 container mx-auto mt-20'>
             <div className={`text-white uppercase font-semibold text-sm ${categoryClasses}`}>
                 {category}
             </div>
