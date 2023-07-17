@@ -5,6 +5,7 @@ export type IntroProps = {
     description?:string;
     bgColor:string;
     categoryClasses?:string;
+    username?: string;
 }
 
 export type FormFieldProps = {

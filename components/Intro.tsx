@@ -2,7 +2,7 @@ import { IntroProps } from '@/types/types'
 import React from 'react'
 
 const Intro = (
-    { category, date, description, bgColor, categoryClasses } : IntroProps
+    { category, date, description, bgColor, categoryClasses, username } : IntroProps
 ) => {
   return (
     <section
@@ -12,10 +12,21 @@ const Intro = (
             <div className={`text-white uppercase font-semibold text-sm ${categoryClasses}`}>
                 {category}
             </div>
-            <h1 className='my-5 text-white font-bold md:text-6xl text-3xl'>
-                Insights about my personal and work<br/>
-                life, and the in-betweens
-            </h1>
+            <div className='my-5 text-white font-bold md:text-6xl text-3xl'>
+                {
+                    username ? (
+                        <h1 className="capitalize">
+                            Welcome <span className='underline'>{username}</span>
+                        </h1>
+                    ) : 
+                    (
+                        <h1>
+                            Insights about my personal and work<br/>
+                            life, and the in-betweens
+                        </h1>
+                    )
+                }
+            </div>
             {
                 description && (
                     <p className='text-gray-400 text-xl'>

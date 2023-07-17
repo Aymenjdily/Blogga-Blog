@@ -119,16 +119,16 @@ const Form = ({ type, formBlog, setForm } : any) => {
             onChange={handleOnChange} />
           </p>
 
-          <div className='relative w-full h-64'>
-            <Image alt="image" fill src={imageSrc || "/upload.png"} className='my-5 object-contain' />
+          <div className='relative w-full h-64 rounded-xl'>
+            <Image alt="image" fill src={imageSrc || "/upload.png"} className='my-5 object-contain rounded-xl' />
           </div>
             
-            
+{/*             
             {imageSrc && !uploadData && (
               <p>
                 <button type='button' onClick={() => {}} className='bg-black text-white w-full py-2 rounded-lg'>Upload the Picture</button>
               </p>
-            )}
+            )} */}
         </div>
         
         <CustomInput 
