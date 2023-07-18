@@ -24,9 +24,20 @@ export type CustomFieldProps = {
     setState: (value: string) => void
 }    
 
+export type ButtonProps = {
+    bgColor: string;
+    number: number;
+    setNumber: (value: number) => void
+}    
+
 export type CustomButtonProps = {
     title: string;
     type?: 'button' | 'submit';
     submitting: boolean;
 }
 
+export type PostCardProps = {
+    isDeleted?: boolean;
+    post:any;
+    handleDelete?: (value: string) => void
+}

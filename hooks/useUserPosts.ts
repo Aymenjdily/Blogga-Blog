@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { UserPostContext } from "@/context/userPostsContext";
 
-export const usePost = () => {
+export const useUserPost = () => {
     const context = useContext(UserPostContext)
 
     if(!context) {

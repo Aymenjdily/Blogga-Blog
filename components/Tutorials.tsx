@@ -9,7 +9,6 @@ const Tutorials = () => {
 
     const filteredPosts = posts && posts.filter((post:any) => post.category=="Tutorials")
     
-    console.log(filteredPosts)
     return (
         <section className='container mx-auto py-24 md:px-0 px-5'>
             <h1

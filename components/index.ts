@@ -9,6 +9,8 @@ import Provider from "./Providers";
 {/* Custom Components */}
 import Form from "./Form";
 import CustomInput from "./CustomInput";
+import PostCard from "./PostCard";
+import Button from "./Button";
 
 {/* Used Components */}
 import DailyUpdates from "./DailyUpdates";
@@ -24,5 +26,7 @@ export {
     CustomInput,
     DailyUpdates,
     DevTools,
-    Tutorials
+    Tutorials,
+    PostCard,
+    Button
 }
