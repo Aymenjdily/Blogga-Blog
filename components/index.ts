@@ -2,6 +2,7 @@
 import Navbar from "./Navbar";
 import Intro from "./Intro";
 import Footer from "./Footer";
+import Banner from "./Banner";
 
 {/* Auth Provider */}
 import Provider from "./Providers";
@@ -28,5 +29,6 @@ export {
     DevTools,
     Tutorials,
     PostCard,
-    Button
+    Button,
+    Banner
 }

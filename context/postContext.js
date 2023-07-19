@@ -6,6 +6,7 @@ export const PostContext = createContext()
 
 export const PostContextProvider = ({ children }) => {
     const [posts, setPosts] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -13,13 +14,16 @@ export const PostContextProvider = ({ children }) => {
           const data = await res.json()
     
           setPosts(data)
+          if(res.ok){
+            setLoading(false)
+          }
         }
     
         fetchPosts()
     }, [])
     
     return(
-        <PostContext.Provider value={{posts}}>
+        <PostContext.Provider value={{posts, loading}}>
             {children}
         </PostContext.Provider>
     )

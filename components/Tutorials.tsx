@@ -3,9 +3,10 @@
 import { usePost } from '@/hooks/usePost'
 import React from 'react'
 import PostCard from './PostCard'
+import Loading from './Loading'
 
 const Tutorials = () => {
-    const { posts } = usePost()
+    const { posts, loading } = usePost()
 
     const filteredPosts = posts && posts.filter((post:any) => post.category=="Tutorials")
     
@@ -16,15 +17,20 @@ const Tutorials = () => {
             >
                 Tutorials
             </h1>
-
-            <div className='flex flex-col space-y-[80px] my-10'>
-                { filteredPosts && filteredPosts.slice(0, 3).map((post: any) => (
-                    <PostCard 
-                     post={post}
-                     key={post._id}
-                    />
-                ))}
-            </div>
+            {
+                loading ? (
+                    <Loading />
+                ) : (
+                    <div className='flex flex-col space-y-[80px] my-10'>
+                        { filteredPosts && filteredPosts.slice(0, 3).map((post: any) => (
+                            <PostCard 
+                            post={post}
+                            key={post._id}
+                            />
+                        ))}
+                    </div>
+                )
+            }
         </section>
     )
 }
